@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/book-a-tour.css" />
+  
+    <title>Book a Tour | Coworking Space in Islamabad | Wintech Cowork</title>
+    <meta name="description" content="
+      Wintech Cowork offers modern coworking spaces, private offices,
+      meeting rooms, and flexible workspaces in Islamabad designed for
+      startups, freelancers, and growing businesses.">
+    <meta name="keywords" content="
+      coworking space Islamabad,
+      shared office Islamabad,
+      private office Islamabad,
+      best coworking space in Islamabad,
+      office space for rent Islamabad,
+      startup workspace Islamabad,
+      modern coworking space Pakistan,
+      flexible workspace Islamabad,
+      meeting rooms Islamabad,
+      business workspace Islamabad,
+      Wintech Cowork ">
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="/">
+        <img src="../images/logo.png" alt="wintech cowork logo"> 
+        </a>
+      </div>
+
+      <button class="nav-toggle" aria-label="Toggle Menu">☰</button>
+
+      <nav class="nav-bar">        
+        <ul class="nav-menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/our-workspaces/">Our Workspaces</a></li>
+          <li><a href="/amenities/">Amenities</a></li>
+          <li><a href="/our-community/">Our Community</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
+          <li><a class="book-btn" href="/book-a-tour/">Book a Tour</a></li> 
+        </ul>
+      </nav>
+    </header>
+
+    <a href="https://wa.me/923055289991" 
+        class="whatsapp-float" 
+        target="_blank">
+
+        <i class="fab fa-whatsapp"></i>
+        <span>Chat with our team</span>
+      </a>
+
+        <section class="contact-section">
+          <div class="contact-heading">
+            <span>BOOK A TOUR</span>
+            <h1>READY TO ELEVATE YOUR WORKSPACE?</h1>
+            <p>Find the perfect environment to grow, connect, and build your next big idea.</p>
+          </div>
+
+          <form id="contactForm" class="contact-form">
+            <input type="hidden" name="access_key" value="0c5e6154-e31e-482a-bd66-9cf880c44287">
+
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <input type="text" name="company" placeholder="Company Name (Optional)">
+
+            <select name="workspace_requirement" required>
+              <option value="">Select Workspace Requirement</option>
+              <option value="Dedicated Desk">Dedicated Desks</option>
+              <option value="Private Office">Private Offices</option>
+              <option value="Conference Room">Conference Rooms</option>
+              <option value="Flexible Pass">Flexible Passes</option>
+              <option value="Virtual Office">Virtual Offices</option>
+            </select>
+
+            <textarea name="message" placeholder="Message / Inquiry" required></textarea>
+
+            <button type="submit">Submit</button>
+
+            <p id="formMessage"></p>
+          </form>
+      </section>
+        
+      <footer class="footer">
+        <div class="footer-main">
+
+        <div class="footer-left">
+          <h2>LET’S<br>CONNECT</h2>
+
+          <div class="footer-middle">
+          <a href="/">Home</a>
+          <span>|</span>
+
+          <a href="/our-workspaces/">Our Workspaces</a>
+          <span>|</span>
+
+          <a href="/amenities/">Amenities</a>
+          <span>|</span>
+
+          <a href="/our-community/">Our Community</a>
+          <span>|</span>
+          
+          <a href="/gallery/">Gallery</a>
+
+        </div>
+
+          <div class="footer-contact">
+            <p>03055289991</p>
+            <p>info@wintechcowork.com</p>
+            <p>Plot 78, Street 6, I-10/3, Islamabad, Pakistan </p>
+          </div>
+
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/people/Wintech-CoworkIslamabad/61561377583073/?mibextid=wwXIfr&rdid=SF6mTCNoTfGaLqDb&share_url=http s%3A%2F%2Fwww.facebook.com%2Fshare%2F1CpL3xUAog%2F%3Fmibextid%3DwwXIfr " target="_blank">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+
+            <a href="https://www.instagram.com/wintechcowork?igsh=MXc1MG8ybTN0Z2tnMg%3D%3D " target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/wintech-cowork-4332b03b6 " target="_blank">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Wintech Cowork. All Rights Reserved.</p>
+      </div>
+    </footer> 
+
+    <script>
+      const navToggle = document.querySelector('.nav-toggle');
+        const navBar = document.querySelector('.nav-bar');
+
+        navToggle.addEventListener('click', () => {
+          navBar.classList.toggle('active');
+        });
+
+        const form = document.getElementById("contactForm");
+        const formMessage = document.getElementById("formMessage");
+
+        form.addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          formMessage.textContent = "Sending...";
+
+          const formData = new FormData(form);
+
+          try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+              method: "POST",
+              body: formData
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+              formMessage.textContent = "Message sent successfully!";
+              formMessage.style.color = "green";
+              form.reset();
+            } else {
+              formMessage.textContent = result.message || "Something went wrong.";
+              formMessage.style.color = "red";
+            }
+
+            } catch (error) {
+              formMessage.textContent = "Error sending message.";
+              formMessage.style.color = "red";
+            }
+          });
+    </script>
+  </body>
+</html>
